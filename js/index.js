@@ -14,7 +14,12 @@
 // console.log(hotelName);
 // console.log(typeof hotelName);
 
-console.log(Number.parseInt(Math.random()*100));
-console.log(Number.parseInt(Math.random() * 100));
-console.log(Number.parseInt(Math.random() * 100));
-console.log(Number.parseInt(Math.random() * 100));
+// console.log(Number.parseInt(Math.random()*100));
+// console.log(Number.parseInt(Math.random() * 100));
+// console.log(Number.parseInt(Math.random() * 100));
+// console.log(Number.parseInt(Math.random() * 100));
+
+let month = 'January'
+
+let season = month === 'January' ? 'summer' : 'winter';
+console.log(season);
