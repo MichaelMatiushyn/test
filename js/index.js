@@ -93,7 +93,6 @@
 // console.log(message.toLowerCase());
 // console.log(message);
 
-
 // const message = 'Welcome to Uman';
 // console.log(message.includes('to'));
 // console.log(message.includes('Paris'));
@@ -106,3 +105,18 @@
 // const message = `My name is ${name}, I'm ${age} years old and very ${mood}.`;
 // console.log(message);
 
+// 2 часть
+
+// const num = 15;
+
+// const isInRange = num >=10 && num <=30;
+
+// console.log(isInRange);
+
+const num = Number(prompt('Введите пожалуйста число до 10'));
+
+if (num <= 10) {
+  console.log('Отлично все подходит');
+} else {
+  console.log('Все плохо! число не подходит');
+}
