@@ -167,7 +167,187 @@
 
 // =============== Опаратор rest
 
-const clients = ['Mango', 'Poly', 'Ajax', 'Chelsey'];
-const [first, ...rest] = clients;
-console.log(first);
-console.log(rest);
+// const clients = ['Mango', 'Poly', 'Ajax', 'Chelsey'];
+// const [first, ...rest] = clients;
+// console.log(first);
+// console.log(rest);
+
+// ========================
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// const sum = numbers.reduce(function(acc, item) {
+//   return acc + item;
+// }, 0);
+// console.log(sum);
+
+// Методы массивов
+
+// let counter = 0;
+// while (counter < 10) {
+//   console.log('counter: ',counter);
+//   counter += 1;
+// }
+
+// ==========================
+// const max = 10;
+// const min = 1;
+// let userInput;
+
+// while (c) {
+//   userInput = prompt(`Дай число от ${min} до ${max}`);
+// }
+
+// const numbers = [12, 58, 49, 68, 94, 13, 8];
+// let i =0;
+// while(i<numbers.length){
+//   console.log(numbers[i]);
+//   i +=1;
+// }
+// ====================================================
+// const max = 10;
+// const min = 1;
+// let userInput;
+// let num;
+// let isInRange = false;
+// do {
+//   userInput = prompt(`Дай число от ${min} до ${max}`);
+
+//   num = Number(userInput);
+// } while (userInput !== null && isInRange);
+
+// ================================
+
+// const numbers = [12, 58, 49, 68, 94, 13, 8];
+// const newNumbers = [];
+// for (let i = 0, max = numbers.length; i < max; i += 1) {
+//   if (numbers[i] < 50) {
+//     newNumbers.push(numbers[i]);
+//   }
+// }
+// console.log(newNumbers);
+
+// ==========================
+// Цикл for of
+
+// const numbers = [12, 58, 49, 68, 94, 13, 8];
+// const newNumbers = [];
+// for (let item of numbers) {
+//   if (item < 50) {
+//     newNumbers.push(item);
+//   }
+// }
+// console.log(numbers);
+// console.log(newNumbers);
+
+// =========================
+
+// const numbers = [12, 58, 49, 68, 94, 13, 8];
+// const userInput = Number(prompt('Давай число!'));
+// let hasNumber = false;
+// for (let i = 0, max = numbers.length; i < max; i += 1) {
+//   if (numbers[i] === userInput) {
+//     hasNumber = true;
+//     break;
+//   }
+// }
+// console.log(hasNumber);
+
+// const message = hasNumber
+// ? 'Есть такое число'
+// : 'Нет такого числа';
+
+// console.log(message);
+
+// ========================
+
+// const numbers = [
+//   [12, 5, 7],
+//   [18, 9, 14, 46],
+//   [24, 8],
+// ];
+// const flatArr = [];
+// for (let i = 0, max = numbers.length; i < max; i += 1) {
+//   for (let j = 0, max = numbers[i].length; j < max; j += 1) {
+//     flatArr.push(numbers[i][j]);
+//   }
+// }
+// console.log(flatArr);
+
+// =======================================================
+// const numbers = [
+//   [12, 5, 7],
+//   [18, 9, 14, 46],
+//   [24, 8],
+// ];
+// const flatArr = [];
+// const arr = [];
+// for (let i = 0, max = numbers.length; i < max; i += 1) {
+//   for (let j = 0, max = numbers[i].length; j < max; j += 1) {
+//     if (numbers[i][j] > 10) {
+//       arr.push(numbers[i][j]);
+//     }
+//   }
+// }
+// console.log(arr);
+
+// ============================================================
+
+// const numbers = [
+//   [12, 5, 7],
+//   [18, 9, 14, 46],
+//   [24, 8],
+// ];
+// let hasNumber = false;
+// const value = 14;
+// for (let i = 0, max = numbers.length; i < max; i += 1) {
+//   if (hasNumber) {
+//     break;
+//   }
+//   for (let j = 0, max = numbers[i].length; j < max; j += 1) {
+//     if (numbers[i][j] === value) {
+//       hasNumber = true;
+//       break;
+//     }
+//     console.log('second for');
+//   }
+//   console.log('first for');
+// }
+
+// const message = hasNumber ? 'Есть такое число' : 'Такого числа нет';
+// console.log(message);
+
+// ====================
+
+const logins = ['mango', 'poly', 'ajax'];
+const min = 3;
+const max = 6;
+
+let userInput = prompt('Давай логин!');
+if (userInput !== null) {
+  const inRange = userInput.length >= min && userInput.length <= max;
+  if (inRange) {
+    userInput = userInput.toLowerCase();
+    let hasLogin = false;
+
+    for (const login of logins) {
+      if (login === userInput) {
+        hasLogin = true;
+        break;
+      }
+    }
+    const message = hasLogin ? 'Есть такой логин' : 'Такого логина нет';
+    console.log(message);
+  } else {
+    console.log('Не в дипазоне!');
+  }
+} else {
+  console.log('Пока!');
+}
+
+//   ======== или ========
+// const hasLogin = logins.includes(userInput);
+
+// const message = hasLogin ? 'Есть такой логин' : 'Такого логина нет';
+// console.log(message);
+// 01:55
