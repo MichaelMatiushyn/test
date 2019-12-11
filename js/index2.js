@@ -351,3 +351,5 @@ if (userInput !== null) {
 // const message = hasLogin ? 'Есть такой логин' : 'Такого логина нет';
 // console.log(message);
 // 01:55
+
+// Добавил на работе
