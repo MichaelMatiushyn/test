@@ -319,35 +319,45 @@
 
 // ====================
 
-const logins = ['mango', 'poly', 'ajax'];
-const min = 3;
-const max = 6;
+// const logins = ['mango', 'poly', 'ajax'];
+// const min = 3;
+// const max = 6;
 
-let userInput = prompt('Давай логин!');
-if (userInput !== null) {
-  const inRange = userInput.length >= min && userInput.length <= max;
-  if (inRange) {
-    userInput = userInput.toLowerCase();
-    let hasLogin = false;
+// let userInput = prompt('Давай логин!');
+// if (userInput !== null) {
+//   const inRange = userInput.length >= min && userInput.length <= max;
+//   if (inRange) {
+//     userInput = userInput.toLowerCase();
+//     let hasLogin = false;
 
-    for (const login of logins) {
-      if (login === userInput) {
-        hasLogin = true;
-        break;
-      }
-    }
-    const message = hasLogin ? 'Есть такой логин' : 'Такого логина нет';
-    console.log(message);
-  } else {
-    console.log('Не в дипазоне!');
-  }
-} else {
-  console.log('Пока!');
-}
+//     for (const login of logins) {
+//       if (login === userInput) {
+//         hasLogin = true;
+//         break;
+//       }
+//     }
+//     const message = hasLogin ? 'Есть такой логин' : 'Такого логина нет';
+//     console.log(message);
+//   } else {
+//     console.log('Не в дипазоне!');
+//   }
+// } else {
+//   console.log('Пока!');
+// }
 
-//   ======== или ========
-// const hasLogin = logins.includes(userInput);
+// //   ======== или ========
+// // const hasLogin = logins.includes(userInput);
 
-// const message = hasLogin ? 'Есть такой логин' : 'Такого логина нет';
-// console.log(message);
-// 01:55
+// // const message = hasLogin ? 'Есть такой логин' : 'Такого логина нет';
+// // console.log(message);
+// // 01:55
+
+// Повтор 2 модуля с начала
+
+const users = ['Mango', 'Ajax', 'Poly'];
+console.log(users.length);
+console.log(users[2]);
+console.log(users[3]);
+
+users[3] = 'Chelsey';
+console.log(users);
