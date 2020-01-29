@@ -319,7 +319,6 @@
 
 // ====================
 
-<<<<<<< HEAD
 // const logins = ['mango', 'poly', 'ajax'];
 // const min = 3;
 // const max = 6;
@@ -355,46 +354,97 @@
 
 // Повтор 2 модуля с начала
 
-const users = ['Mango', 'Ajax', 'Poly'];
-console.log(users.length);
-console.log(users[2]);
-console.log(users[3]);
+// const users = ['Mango', 'Ajax', 'Poly'];
+// // console.log(users.length);
+// // console.log(users[2]);
+// // console.log(users[3]);
 
-users[3] = 'Chelsey';
-console.log(users);
-=======
-const logins = ['mango', 'poly', 'ajax'];
-const min = 3;
-const max = 6;
+// // users[3] = 'Chelsey';
+// // console.log(users);
 
-let userInput = prompt('Давай логин!');
-if (userInput !== null) {
-  const inRange = userInput.length >= min && userInput.length <= max;
-  if (inRange) {
-    userInput = userInput.toLowerCase();
-    let hasLogin = false;
+// // const string = 'I love js';
+// // console.log(string.split(' '));
 
-    for (const login of logins) {
-      if (login === userInput) {
-        hasLogin = true;
-        break;
-      }
-    }
-    const message = hasLogin ? 'Есть такой логин' : 'Такого логина нет';
-    console.log(message);
-  } else {
-    console.log('Не в дипазоне!');
-  }
-} else {
-  console.log('Пока!');
-}
+// // const userInput = prompt('Введите товары через запятую');
+// // console.log(userInput);
 
-//   ======== или ========
-// const hasLogin = logins.includes(userInput);
+// // const goods = userInput.split(', ');
+// // console.log(goods);
 
-// const message = hasLogin ? 'Есть такой логин' : 'Такого логина нет';
-// console.log(message);
-// 01:55
+// // const asString = users.join(' - ');
+// // console.log(asString);
 
-// Добавил на работе
->>>>>>> 0e789aee25bb00d213389c5064aab20a627f6a15
+// const userInput = prompt('введите имя');
+
+// // const user = users.indexOf(userInput);
+// // console.log(user);
+
+// const hasUser = users.includes(userInput);
+// console.log(hasUser);
+
+// const users = ['Mango', 'Ajax', 'Poly'];
+
+// users.push('Chelsey');
+// console.log(users);
+// users.push('Kolia');
+// console.log(users);
+
+// const deletedEl = users.pop();
+// console.log('Deleted element: ',deletedEl);
+// console.log(users);
+
+// const guests = ['Mango', 'Poly'];
+// const guestName = prompt('Давай имя');
+// console.log(guests);
+// guests.push(guestName);
+
+// console.log(guests);
+
+// const users = ['Mango', 'Ajax', 'Poly', 'Chelsey'];
+
+// const someUsers = users.slice(1,3);
+
+// console.log('some users', someUsers);
+// console.log(users);
+
+// const users = ['Mango', 'Ajax', 'Poly', 'Chelsey'];
+// console.log(users);
+
+// // console.log(users.splice(2, 1));  просто вырезать!!!!!!!!!!
+
+// console.log(users);
+
+// Найти элемент массива по значению и вырезать его
+// const numbers = [3, 7, 8, 12];
+// console.log(numbers);
+
+// const idx = numbers.indexOf(8);
+
+// console.log(numbers.splice(idx, 1));
+// console.log(numbers);
+
+// const users = ['Mango', 'Ajax', 'Poly', 'Chelsey'];
+
+// // users.splice(2, 0, 'Alex', 'Johny');
+// // console.log(users);
+// // console.log(users);
+// // users.splice(1, 1, 'Alex');
+// // console.log(users);
+
+// const userName = prompt('введите имя пользователя');
+
+// if (userName !== null) {
+//   const hasName = users.includes(userName);
+
+//   if (hasName) {
+//     const idx = users.indexOf(userName);
+
+//     users.splice(idx, 1);
+//     console.log(`Элемент ${userName} удален`, users);
+//   } else {
+//     console.log('такого пользователя нет, ошибка!');
+//   }
+// }
+
+// продолжить просмотр 1 13 30
+
