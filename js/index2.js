@@ -431,20 +431,20 @@
 // // users.splice(1, 1, 'Alex');
 // // console.log(users);
 
-// const userName = prompt('введите имя пользователя');
+const userName = prompt('введите имя пользователя');
 
-// if (userName !== null) {
-//   const hasName = users.includes(userName);
+if (userName !== null) {
+  const hasName = users.includes(userName);
 
-//   if (hasName) {
-//     const idx = users.indexOf(userName);
+  if (hasName) {
+    const idx = users.indexOf(userName);
 
-//     users.splice(idx, 1);
-//     console.log(`Элемент ${userName} удален`, users);
-//   } else {
-//     console.log('такого пользователя нет, ошибка!');
-//   }
-// }
+    users.splice(idx, 1);
+    console.log(`Элемент ${userName} удален`, users);
+  } else {
+    console.log('такого пользователя нет, ошибка!');
+  }
+}
 
-// продолжить просмотр 1 13 30
+
 
