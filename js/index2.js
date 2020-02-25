@@ -431,20 +431,32 @@
 // // users.splice(1, 1, 'Alex');
 // // console.log(users);
 
-const userName = prompt('введите имя пользователя');
+// const users = ['Mango', 'Ajax', 'Poly', 'Chelsey'];
+// const userName = prompt('введите имя пользователя');
 
-if (userName !== null) {
-  const hasName = users.includes(userName);
+// if (userName !== null) {
+//   const hasName = users.includes(userName);
 
-  if (hasName) {
-    const idx = users.indexOf(userName);
+//   if (hasName) {
+//     const idx = users.indexOf(userName);
 
-    users.splice(idx, 1);
-    console.log(`Элемент ${userName} удален`, users);
-  } else {
-    console.log('такого пользователя нет, ошибка!');
-  }
-}
+//     users.splice(idx, 1);
+//     console.log(`Элемент ${userName} удален`, users);
+//   } else {
+//     console.log('такого пользователя нет, ошибка!');
+//   }
+// }
+
+// =================================================
+// Метод concat
+
+const a = [1,2,3];
+const b = [4,5,6];
+
+const c = a.concat(b);
+console.log(c);
+ 
+// Продолжить просмотр на 01:48
 
 
 
