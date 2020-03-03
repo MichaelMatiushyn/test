@@ -447,16 +447,166 @@
 //   }
 // }
 
+// console.log(Array.isArray(users));
+
 // =================================================
 // Метод concat
 
-const a = [1,2,3];
-const b = [4,5,6];
+// const a = [1,2,3];
+// const b = [4,5,6];
 
-const c = a.concat(b);
-console.log(c);
- 
+// const c = a.concat(b);
+// console.log(c);
+
 // Продолжить просмотр на 01:48
 
+// =======================================================
 
+// ДЕСТРУКТУРИЗАЦИЯ !!!!!!
 
+// const clients = ['Mango', 'Poly', 'Ajax'];
+// // const first = clients[0];
+
+// // const [first, second, third, fourth] = clients;
+// // console.log(first);
+// // console.log(third);
+// // console.log(fourth);
+
+// // Значение по умолчанию / старая версия
+
+// const [
+//   first = 'client',
+//   second = 'client',
+//   third = 'client',
+//   fourth = 'client',
+// ] = clients;
+
+// console.log(first);
+// console.log(fourth);
+
+// ===============   ОПРЕАТОР REST   ===================
+
+// const clients = ['Mango', 'Poly', 'Ajax'];
+
+// const [first, ...rest] = clients;
+
+// console.log(rest);
+
+// 2 часть
+
+// const numbers = [1, 2, 3, 4, 5];
+// const sum = numbers.reduce(function(acc, item) {
+//   return acc + item;
+// }, 0);;
+
+// console.log(sum);
+
+// ЦИКЛЫ
+
+// while (условие){
+// тело цикла;
+// }
+
+// пример
+// let counter = 0;
+
+// while (counter < 10) {
+//   console.log('counter: ', counter);
+//   counter += 1;
+// }
+
+// =======================================
+
+// const max = 10;
+// const min = 1;
+
+// let userInput;
+// while (userInput !== null) {
+//   console.log(userInput);
+//   userInput = prompt(`Дай число от ${min} до ${max}`);
+// };
+
+// ===============================
+
+// const numbers = [12, 75, 90, 7, 23, 14];
+// let i = 0;
+// while (i < numbers.length) {
+//   console.log(numbers[i]);
+//   i += 1;
+// }
+
+// ===============================================
+// Цикл do while (condition) {
+
+// // }
+// const max = 10;
+// const min = 1;
+// let userInput;
+// let num;
+// let inRange = false;
+
+// do {
+//   userInput = prompt(`Дай число от ${min} до ${max}`);
+
+//   num = Number(userInput);
+//   inRange = num >= min && num <= max;
+//   console.log(userInput);
+// } while (userInput !== null && !inRange);
+
+// const numbers = [12, 75, 90, 7, 23, 14];
+// for (let i = 0, max = numbers.length; i < max; i += 1) {
+//   if (numbers[i] < 50) {
+//     console.log(numbers[i]);
+//   }
+// }
+// =========================================================
+// const numbers = [12, 75, 90, 7, 23, 14];
+// const newNumbers = [];
+// for (let i = 0, max = numbers.length; i < max; i += 1) {
+//   if (numbers[i] < 50) {
+//     newNumbers.push(numbers[i]);
+//   }
+// }
+// console.log(newNumbers);
+// ===========================================================
+// const numbers = [12, 75, 90, 7, 23, 14];
+// const newNumbers = [];
+// for (let item of numbers) {
+//   if (item < 50) {
+//     newNumbers.push(item);
+//   }
+// }
+// console.log(newNumbers);
+// ================================================================
+// const numbers = [12, 75, 90, 7, 23, 14];
+// const userInput = Number(prompt('Давай число'));
+// let hasNumber = false;
+
+// for (let i = 0, max = numbers.length; i < max; i += 1) {
+//   if (numbers[i] === userInput) {
+//     hasNumber = true;
+//     break;
+//   }
+// }
+// const message = hasNumber ? 'Есть такое число!' : 'Такого числа нет!';
+// console.log(message);
+// =============================
+
+const numbers = [
+  [12, 5, 7],
+  [18, 9, 14, 46],
+  [24, 8],
+];
+const flatArr = [];
+
+for (let i = 0, max = numbers.length; i < max; i += 1) {
+  for (let j = 0, max = numbers[i].length; j < max; j += 1) {
+    if (numbers[i][j] > 10) {
+      flatArr.push(numbers[i][j]);
+    }
+  }
+}
+
+console.log(flatArr);
+
+// продолжить просмотр 2 часть 01:22
