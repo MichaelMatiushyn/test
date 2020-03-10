@@ -640,33 +640,36 @@
 
 // ===============================================================
 
-// const logins = ['Mango', 'Poly', 'Ajax'];
-// const min = 3;
-// const max = 6;
+const logins = ['Mango', 'Poly', 'Ajax'];
+const min = 3;
+const max = 6;
 
-// const userInput = prompt('Давай login');
+let userInput = prompt('Введите логин!');
 
-// if (userInput !== null) {
-//   const inRange = userInput.length >= min && userInput.length <= max;
-//   if (inRange) {
-//     // const hasLogin = logins.includes(userInput);
+if (userInput !== null) {
+  const inRange = userInput.length >= min && userInput.length <= max;
+  if (inRange) {
+    // console.log('Начинаем поиск!');
 
-//     // const message = hasLogin ? 'Есть такое имя' : 'Такого имени нет';
-//     // console.log(message);
+    // const hasLogin = logins.includes(userInput);
 
-//     // или
+    //  или правильно !!!!
+    userInput = userInput.toLocaleLowerCase();
+    const arr = userInput.split('');
+    arr[0] = arr[0].toUpperCase();
+    userInput = arr.join('');
+    console.log(userInput);
 
-//     let hasLogin = false;
-//     for (const login of logins) {
-//       if (login === userInput) {
-//         hasLogin = true;
-//       }
-//     }
-//     const message = hasLogin ? 'Есть  такой логин' : 'Такого логина нет';
-//     console.log(message);
-//   } else {
-//     console.log(`к-во символов не входит в промежуток от ${min} до ${max}`);
-//   }
-// } else {
-//   console.log('ну ладно пока');
-// }
+    let hasLogin = false;
+    for (const login of logins) {
+      if (login === userInput) {
+        hasLogin = true;
+      }
+    }
+    const message = hasLogin ? 'Такой логин есть!' : 'Такого логина нет!';
+
+    console.log(message);
+  }
+} else {
+  console.log('Ну ладно, пока!');
+}
