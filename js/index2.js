@@ -592,21 +592,81 @@
 // console.log(message);
 // =============================
 
-const numbers = [
-  [12, 5, 7],
-  [18, 9, 14, 46],
-  [24, 8],
-];
-const flatArr = [];
+// const numbers = [
+//   [12, 5, 7],
+//   [18, 9, 14, 46],
+//   [24, 8],
+// ];
+// const flatArr = [];
 
-for (let i = 0, max = numbers.length; i < max; i += 1) {
-  for (let j = 0, max = numbers[i].length; j < max; j += 1) {
-    if (numbers[i][j] > 10) {
-      flatArr.push(numbers[i][j]);
-    }
-  }
-}
+// for (let i = 0, max = numbers.length; i < max; i += 1) {
+//   for (let j = 0, max = numbers[i].length; j < max; j += 1) {
+//     if (numbers[i][j] > 10) {
+//       flatArr.push(numbers[i][j]);
+//     }
+//   }
+// }
 
-console.log(flatArr);
+// console.log(flatArr);
 
 // продолжить просмотр 2 часть 01:22
+
+// ==========================================
+
+// const numbers = [
+//   [12, 5, 7],
+//   [18, 9, 14, 46],
+//   [24, 8],
+// ];
+// const value = 14;
+// let hasNumber = false;
+
+// for (let i = 0, max = numbers.length; i < max; i += 1) {
+//   if (hasNumber) {
+//     break;
+//   }
+//   for (let j = 0, max = numbers[i].length; j < max; j += 1) {
+//     if (value === numbers[i][j]) {
+//       hasNumber = true;
+//     }
+//     console.log('second for');
+//   }
+//   console.log('first for');
+// }
+
+// const message = hasNumber ? 'Есть такое число' : 'Такого числа нет';
+
+// console.log(message);
+
+// ===============================================================
+
+// const logins = ['Mango', 'Poly', 'Ajax'];
+// const min = 3;
+// const max = 6;
+
+// const userInput = prompt('Давай login');
+
+// if (userInput !== null) {
+//   const inRange = userInput.length >= min && userInput.length <= max;
+//   if (inRange) {
+//     // const hasLogin = logins.includes(userInput);
+
+//     // const message = hasLogin ? 'Есть такое имя' : 'Такого имени нет';
+//     // console.log(message);
+
+//     // или
+
+//     let hasLogin = false;
+//     for (const login of logins) {
+//       if (login === userInput) {
+//         hasLogin = true;
+//       }
+//     }
+//     const message = hasLogin ? 'Есть  такой логин' : 'Такого логина нет';
+//     console.log(message);
+//   } else {
+//     console.log(`к-во символов не входит в промежуток от ${min} до ${max}`);
+//   }
+// } else {
+//   console.log('ну ладно пока');
+// }
