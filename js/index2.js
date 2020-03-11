@@ -640,36 +640,83 @@
 
 // ===============================================================
 
-const logins = ['Mango', 'Poly', 'Ajax'];
-const min = 3;
-const max = 6;
+// const logins = ['Mango', 'Poly', 'Ajax'];
+// const min = 3;
+// const max = 6;
 
-let userInput = prompt('Введите логин!');
+// let userInput = prompt('Введите логин!');
 
-if (userInput !== null) {
-  const inRange = userInput.length >= min && userInput.length <= max;
-  if (inRange) {
-    // console.log('Начинаем поиск!');
+// if (userInput !== null) {
+//   const inRange = userInput.length >= min && userInput.length <= max;
+//   if (inRange) {
+//     // console.log('Начинаем поиск!');
 
-    // const hasLogin = logins.includes(userInput);
+//     // const hasLogin = logins.includes(userInput);
 
-    //  или правильно !!!!
-    userInput = userInput.toLocaleLowerCase();
-    const arr = userInput.split('');
-    arr[0] = arr[0].toUpperCase();
-    userInput = arr.join('');
-    console.log(userInput);
+//     //  или правильно !!!!
+//     userInput = userInput.toLocaleLowerCase();
+//     const arr = userInput.split('');
+//     arr[0] = arr[0].toUpperCase();
+//     userInput = arr.join('');
+//     console.log(userInput);
 
-    let hasLogin = false;
-    for (const login of logins) {
-      if (login === userInput) {
-        hasLogin = true;
-      }
-    }
-    const message = hasLogin ? 'Такой логин есть!' : 'Такого логина нет!';
+//     let hasLogin = false;
+//     for (const login of logins) {
+//       if (login === userInput) {
+//         hasLogin = true;
+//       }
+//     }
+//     const message = hasLogin ? 'Такой логин есть!' : 'Такого логина нет!';
 
-    console.log(message);
-  }
-} else {
-  console.log('Ну ладно, пока!');
-}
+//     console.log(message);
+//   }
+// } else {
+//   console.log('Ну ладно, пока!');
+// }
+// ===========================================================================
+
+// Практические задания
+
+/*
+ * Есть массив имен пользователей
+//  * Используя методы массива, последовательно выполнить указанные операции
+//  */
+
+// const users = ['Mango', 'Poly', 'Ajax', 'Chelsey'];
+
+// // Удалить первый элемент массива
+// users.splice(0, 1);
+// console.log(users); // ["Poly", "Ajax", "Chelsey"]
+
+// // Удалить последний элемент массива
+// users.splice(-1, 1);
+// console.log(users); // ["Poly", "Ajax"]
+
+// // Добавить в начало массива пользователя "Lux"
+// users.splice(0, 0, 'Lux');
+// console.log(users); // ["Lux", "Poly", "Ajax"]
+
+// // Добавить в конец массива два пользователя ("Jay" и "Kiwi") за одну операцию
+// users.splice(3, 0, 'Jay', 'Kivi');
+// console.log(users); //  ["Lux", "Poly", "Ajax", "Jay", "Kiwi"]
+
+// // Удалить из массива элемент хранящийся в переменной userToDelete
+// const userToDelete = 'Ajax';
+// for (let i = 0, max = users.length; i < max; i += 1) {
+//   if (userToDelete === users[i]) {
+//     users.splice([i], 1);
+//   }
+// }
+// console.log(users); //  ["Lux", "Poly", "Jay", "Kiwi"]
+
+// // Добавить в массив пользователя "Kong", перед пользователем хранящейся в переменной userToInsertBefore
+// const userToInsertBefore = 'Jay';
+
+// for (let i = 0, max = users.length; i < max; i += 1) {
+//   if (users[i] === userToInsertBefore) {
+//     const idx = users.indexOf(userToInsertBefore);
+//     users.splice(idx, 0, 'Kong');
+//     break;
+//   }
+// }
+// console.log(users); //  ["Lux", "Poly", "Kong", "Jay", "Kiwi"]
