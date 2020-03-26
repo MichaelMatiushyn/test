@@ -270,15 +270,105 @@
 // })();
 // console.log(a);
 
+// чтобы вызвать  (function () {})();
+
 // ====  можно как стрелочную функцию
 
 // (() =>{
 
 // } )()
 
-const x = (function(a, b, c) {
-  return a + b + c;
-})(5, 1, 3);
+// const x = (function(a, b, c) {
+//   return a + b + c;
+// })(5, 1, 3);
 
-console.log(x);
-// =========== ппродолжить просмотр на 3 части модуль 3
+// console.log(x);
+
+// Part 3 of 3
+
+// Замыкание
+
+// const outerFn = function() {
+//   let x = 123;
+//   const innerFn = function() {
+//     console.log(x);
+//   };
+//   return innerFn;
+// };
+// const fn = outerFn();
+// fn();
+
+// пример
+
+// const privateCounter = function() {
+//   let counter = 0;
+
+//   return function() {
+//     counter += 1;
+//     console.log(counter);
+//   };
+// };
+// const counter1 = privateCounter();
+// counter1();
+// counter1();
+// counter1();
+// counter1();
+// counter1();
+
+// const counter2 = privateCounter();
+// counter2();
+// counter2();
+// counter2();
+// counter2();
+
+// Рекурсия
+// const numbers = [1, [2, 3], 4, [5, 6]];
+
+// const flatten = function fn(arr) {
+//   const flatArr = [];
+
+//   for (let elem of arr) {
+//     const isArray = Array.isArray(elem);
+
+//     if (isArray) {
+//       for (let x of elem) {
+//         flatArr.push(x);
+//       }
+//     } else {
+//       flatArr.push(elem);
+//     }
+//   }
+
+//   return flatArr;
+// };
+
+// const flat = flatten(numbers);
+// console.log(flat);
+// ==============================   спомощью рекурсии это сделать
+
+// const numbers = [1, [2, [3, 4, [5, 6]]], [7, [8, [9]]], 10];
+
+// const flatten = function self(arr) {
+//   let flatArr = [];
+
+//   for (let elem of arr) {
+//     const isArray = Array.isArray(elem);
+//     if (isArray) {
+//       flatArr = flatArr.concat(self(elem));
+//     } else {
+//       flatArr.push(elem);
+//     }
+//   }
+//   return flatArr;
+// };
+
+// const flat = flatten(numbers);
+// console.log(flat);
+// ============================================
+// function removeFromArray(arr, ...values) {
+//   console.log(arr);
+//   console.log(values);
+// }
+// console.log(removeFromArray([1, 2, 3, 4, 5], 2, 4, 123, 667));
+
+// Конец 3 модуля
