@@ -124,22 +124,22 @@
 
 //  ============================================ Task 4.6 ================================================
 
-const users = [{
-    name: 'Poly',
-    age: 7,
-    mood: 'happy'
-  },
-  {
-    name: 'Mango',
-    age: 4,
-    mood: 'blissful'
-  },
-  {
-    name: 'Ajax',
-    age: 3,
-    mood: 'tired'
-  },
-];
+// const users = [{
+//     name: 'Poly',
+//     age: 7,
+//     mood: 'happy'
+//   },
+//   {
+//     name: 'Mango',
+//     age: 4,
+//     mood: 'blissful'
+//   },
+//   {
+//     name: 'Ajax',
+//     age: 3,
+//     mood: 'tired'
+//   },
+// ];
 
 // const getAllPropValues = function (arr, prop) {
 //   let answer = [];

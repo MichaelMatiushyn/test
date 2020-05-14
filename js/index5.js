@@ -334,3 +334,145 @@
 // console.log(shop);
 
 // продолжить на 5.3
+
+// const guests = [
+//   { name: 'Mango', age: 20, isActive: true },
+//   { name: 'Poly', age: 18, isActive: false },
+//   { name: 'Ajax', age: 30, isActive: true },
+//   { name: 'Chelsey', age: 45, isActive: false },
+// ];
+
+// const guestsNames = guests.map(user => user.name);
+// console.log(guestsNames);
+
+// ==========================================
+//    Debugging / Дебаг
+
+// const checkLoginVAlidity = login => {
+//   if (login.length > 4 && login.length < 16) {
+//     return true;
+//   }
+//   return false;
+// };
+// const valid = checkLoginVAlidity('qweqwe');
+// console.log(valid);
+
+// =====================================================
+
+const usersDb = [
+  { id: 0, login: 'mango', email: 'mango@gmail.com', active: true },
+  { id: 1, login: 'poly', email: 'poly@gmail.com', active: true },
+  { id: 2, login: 'ajax', email: 'ajax@gmail.com', active: false },
+];
+
+// const getActiveUsers = users => {
+//   const activeUsers = [];
+
+//   for (const user of users) {
+//     if (user.active) {
+//       activeUsers.push(user);
+//     }
+//   }
+//   return activeUsers;
+// };
+
+// const activeUsers = getActiveUsers(usersDb);
+// console.log('[active users]: ', activeUsers);
+
+// const getActiveUsers = users => users.filter(user => user.active);
+// console.log(getActiveUsers(usersDb));
+
+// const active = usersDb.filter(user => user.active);
+// const names = active.map(u => u.login);
+// console.log(names);
+
+// let users = usersDb.map(user => {
+//   if (user.active) {
+//     return {
+//       ...user,
+//       login: `${user.login}-active`,
+//     };
+//   }
+//   return user;
+// });
+
+// либо короче
+
+// const users = usersDb.map(user =>
+//   user.active ? { ...user, login: `${user.login}-active` } : user,
+// );
+
+// console.log(users);
+
+// ========================================
+
+// const titleCase = function (str) {
+//   const arr = str.split(' ');
+//   for (let i = 0, max = arr.length; i < max; i += 1) {
+//     const elem = arr[i];
+//     const firstLetter = elem[0].toUpperCase();
+//     const rest = elem.slice(1).toLowerCase();
+
+//     arr[i] = firstLetter + rest;
+//     console.log(arr[i]);
+//   }
+//   const result = arr.join(' ');
+//   return result;
+// };
+
+// console.log(titleCase("I'm a little tea pot"));
+
+// ====================================
+
+// const users = [
+//   { name: 'Poly', age: 7, mood: 'happy' },
+//   { name: 'Mango', age: 4, mood: 'blissful' },
+//   { name: 'Ajax', age: 3, mood: 'tired' },
+// ];
+
+// const getAllPropValues = prop => {
+//   for (const user of users) {
+//     console.log(user);
+//   }
+// };
+
+// getAllPropValues('name');
+
+// =========================================================
+
+// const guests = [
+//   { name: 'Mango', inActiveDays: 15, isActive: true },
+//   { name: 'Poly', inActiveDays: 8, isActive: false },
+//   { name: 'Ajax', inActiveDays: 32, isActive: false },
+//   { name: 'Chelsey', inActiveDays: 85, isActive: true },
+// ];
+
+// const setGuestsState = (arr,prop)
+
+// console.log(setGuestsState(users,10));
+
+// const getId = () => '-' + Math.random().toString(36).substr(2, 9);
+// console.log(getId());
+
+// function SocialBook(users = [], posts = {}) {
+//   this.users = users;
+//   this.posts = posts;
+
+//   this.addPost = (userId, post) => {
+//     this.posts[userId].push(post);
+//   };
+//   this.addPostLike = (userId, postId) => {
+//     this.posts[userId] = this.posts[userId].map(post => {
+//       if (post.id === postId) {
+//         return {
+//           ...post,
+//           likes: post.likes + 1,
+//         };
+//       }
+//       return post;
+//     });
+//   };
+// }
+
+// const book = new SocialBook();
+// console.log(book);
