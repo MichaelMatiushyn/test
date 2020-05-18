@@ -171,18 +171,20 @@
 
 class HeroClass {
   constructor(name, level) {
-    this.name = name;
-    this.level = level;
+    this._name = name;
+    this._level = level;
   }
-  getName() {
-    return this.name;
+  get name() {
+    return this._name;
   }
-  setLevel(level) {
-    this.level = level;
+  set level(level) {
+    this._level = level;
   }
+
   getStatus() {
     console.log(this);
   }
+
   static sayHi() {
     console.log('hello');
   }
@@ -191,10 +193,10 @@ console.log('HeroClass.prototype:', HeroClass.prototype);
 
 const ajax = new HeroClass('ajax', 2);
 console.log(ajax);
-console.log(ajax.getName());
-ajax.setLevel(10);
+
 ajax.getStatus();
 HeroClass.sayHi();
+console.log(ajax.name);
 
 // function Hero(name, level) {
 //   this.name = name;
@@ -228,3 +230,5 @@ HeroClass.sayHi();
 // poly.attack();
 // poly.getName();
 // console.log(poly);
+
+// Продолжить просмотр 6.2 на 1.06
