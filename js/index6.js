@@ -169,35 +169,6 @@
 // poly.getName();
 // console.log(poly);
 
-class HeroClass {
-  constructor(name, level) {
-    this._name = name;
-    this._level = level;
-  }
-  get name() {
-    return this._name;
-  }
-  set level(level) {
-    this._level = level;
-  }
-
-  getStatus() {
-    console.log(this);
-  }
-
-  static sayHi() {
-    console.log('hello');
-  }
-}
-console.log('HeroClass.prototype:', HeroClass.prototype);
-
-const ajax = new HeroClass('ajax', 2);
-console.log(ajax);
-
-ajax.getStatus();
-HeroClass.sayHi();
-console.log(ajax.name);
-
 // function Hero(name, level) {
 //   this.name = name;
 //   this.level = level;
@@ -232,3 +203,63 @@ console.log(ajax.name);
 // console.log(poly);
 
 // Продолжить просмотр 6.2 на 1.06
+// class HeroClass {
+//   constructor(name, level) {
+//     this._name = name;
+//     this._name = name;
+//     this._name = name;
+//     this._name = name;
+//     this._level = level;
+//   }
+//   get name() {
+//     return this._name;
+//   }
+//   set level(level) {
+//     this._level = level;
+//   }
+//   static sayHi() {12+
+//     console.log('hello');
+//   }
+// }
+
+// class WarriorClass extends HeroClass {
+//   constructor(name, level, weapon) {
+//     super(name, level);
+//     this.weapon = weapon;
+//   }
+
+//   attack() {
+//     console.log(`${this.name} attacks with the ${this.weapon}`);
+//   }
+// }
+
+// const x = new WarriorClass('x', 2, 'Axe');
+// console.log(x);
+// x.attack();
+// x.level = 10;
+// console.log(x);
+
+// // ===================================================
+// перезапись сообщений ошики
+
+// function sumArray(arr) {
+//   if (!Array.isArray(arr)) {
+//     throw new Error('передали не массив');
+//   }
+//   return arr.reduce((acc, val) => acc + val, 0);
+// }
+
+// // Отлавливания ошибок
+// try {
+//   console.log(sumArray([1, 2, 3]));
+// } catch (error) {
+//   console.log(error);
+// }
+// try {
+//   console.log(sumArray('hello'));
+// } catch (e) {
+//   console.log(e);
+// }
+
+// 6.2 конец
+
