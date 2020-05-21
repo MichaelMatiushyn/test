@@ -263,3 +263,24 @@
 
 // 6.2 конец
 
+// const box = document.querySelector('.box');
+// console.log(box);
+
+// let x = 5;
+// x = 'b';
+// console.log(x);
+
+// const run = true;
+// let name = 'bob';
+// if (run) {
+//   let name = 'charley';
+//   console.log(name);
+// }
+// console.log(name);
+
+// setTimeout(() => {
+//   console.log('Hello');
+// }, 2000);
+
+// end of 6.3
+
