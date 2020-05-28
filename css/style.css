@@ -1,0 +1,23 @@
+.site-logo {
+  font-size: 20px;
+  color: blue;
+  background-color: #fff;
+}
+
+.site-logo--active {
+  color: teal;
+}
+/* .btn {
+  width: 100px;
+
+  color: grey;
+} */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2px;
+  background-color: #212121;
+  cursor: pointer;
+  color: #ffffff;
+}
