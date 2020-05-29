@@ -193,23 +193,169 @@
 // console.log(img.attributes);
 // ============================================
 
-const list = document.querySelector('.list');
+// const list = document.querySelector('.list');
 
-const itemA = document.createElement('li');
-itemA.textContent = 'Git';
-itemA.classList.add('list-item');
+// const itemA = document.createElement('li');
+// itemA.textContent = 'Git';
+// itemA.classList.add('list-item');
 
-const itemB = document.createElement('li');
-itemB.textContent = 'React';
+// const itemB = document.createElement('li');
+// itemB.textContent = 'React';
 
-// list.appendChild(itemA);
-// list.appendChild(itemB);
+// // list.appendChild(itemA);
+// // list.appendChild(itemB);
 
-list.append(itemB);
-list.prepend(itemA);
+// list.append(itemB);
+// list.prepend(itemA);
 
-// list.appendChild(item);
-// list.insertBefore(itemA, list.firstElementChild);
-// console.log(itemB);
+// // list.appendChild(item);
+// // list.insertBefore(itemA, list.firstElementChild);
+// // console.log(itemB);
 
-// продолжить 7.2 на 0.33
+// // list.before(itemA);    -  вставка перед блоком
+// // list.after(itemB);     -  вставка после блока
+
+// // list.replaceWith(itemA);  - полность заменить
+
+// // list.parentNode.removeChild(list);  -   старый метод удаления элемента
+// // list.remove();  - современный метод
+
+// // console.log(list.innerHTML);
+
+// // // Очень дорогостоящая операция
+// const item = '<li>New position</li>';
+// // list.innerHTML += item;
+
+// // list.insertAdjacentHTML('beforebegin', item);
+// // list.insertAdjacentHTML('afterbegin', item);
+// // list.insertAdjacentHTML('beforeend', item);
+// // list.insertAdjacentHTML('afterend', item);
+
+// const clone = list.cloneNode(true);
+// console.log(clone);
+// document.body.appendChild(clone);
+// =====================================================
+
+// const list = document.querySelector('.list');
+// const items = [];
+// for (let i = 0; i < 100; i += 1) {
+//   const item = document.createElement('li');
+//   item.textContent = `item ${i}`;
+
+//   items.push(item);
+// }
+// console.log(items);
+// list.append(...items);
+
+// do {
+//   let userInput = prompt('Давай');
+
+//   if (userInput === null) {
+//     break;
+//   }
+// } while (true);
+// ===============================================================================
+const grid = $qs('.notes-grid');
+// const note = createNote({
+//   text: 'Содержание заметки 1232123',
+//   date: '07/06/2018',
+// });
+
+// grid.appendChild(note);
+
+const notesList = [
+  { text: 'Заметка номер 1', date: getTimeStamp() },
+  { text: 'Заметка номер 2', date: getTimeStamp() },
+  { text: 'Заметка номер 3', date: getTimeStamp() },
+  { text: 'Заметка номер 4', date: getTimeStamp() },
+  { text: 'Заметка номер 5', date: getTimeStamp() },
+];
+
+// const elements = createGridItem(notesList);
+// grid.append(...elements);
+
+const markup = createGridItemsMarkup(notesList);
+grid.innerHTML = markup;
+
+/*  ========   Helpers ======= */
+
+function createNote({ text = 'Содержание заметки', date = '07/06/2018' }) {
+  const note = $cel('div', { className: 'note' });
+
+  // const note = document.createElement('div');
+  // note.classList.add('note');
+
+  const noteContent = $cel('div', { className: 'note__content' });
+
+  // const noteContent = document.createElement('div');
+  // noteContent.classList.add('note__content');
+
+  const noteText = $cel('p', { className: 'note__text' }, text);
+  // const noteText = document.createElement('p');
+  // noteText.classList.add('note__text');
+  // noteText.textContent = text;
+
+  const noteDate = $cel(
+    'p',
+    { className: 'note__date', date },
+    `Создано ${date}`,
+  );
+  // const noteDate = document.createElement('p');
+  // noteDate.classList.add('note__date');
+  // noteDate.textContent = `Создано ${date}`;
+
+  const noteActions = $cel('div', { className: 'note__actions' });
+
+  // const noteActions = document.createElement('div');
+  // noteActions.classList.add('note__actions');
+  const editBtn = $cel('button', { className: 'button' }, 'Изменить');
+  // const editBtn = document.createElement('button');
+  // editBtn.classList.add('button');
+  // editBtn.textContent = 'Изменить';
+
+  const delBtn = $cel('button', { className: 'button' }, 'Удалить');
+  // const delBtn = document.createElement('button');
+  // delBtn.classList.add('button');
+  // delBtn.textContent = 'Удалить';
+
+  noteContent.append(noteText, noteDate);
+  noteActions.append(editBtn, delBtn);
+  note.append(noteContent, noteActions);
+
+  return note;
+}
+function createGridItem(arr) {
+  return arr.reduce((acc, el) => acc.concat(createNote(el)), []);
+
+  // const elements = [];
+  // arr.forEach(note => {
+  //   const el = createNote(note);
+  //   elements.push(el);
+  // }
+  // return elements;
+}
+function createNoteMarkup({ text, date }) {
+  return `
+ <div class="note">
+      <div class="note__content">
+        <p class="note__text">${text}</p>
+        <p class="note__date">Создано ${date}</p>
+      </div>
+      <div class="note__actions">
+        <button class="button">Изменить</button>
+        <button class="button">Удалить</button>
+      </div>
+    </div>
+  `;
+}
+function createGridItemsMarkup(arr) {
+  return arr.reduce((acc, obj) => acc + createNoteMarkup(obj), '');
+
+  // let markup = '';
+
+  // arr.forEach(note => {
+  //   const html = createNoteMarkup(note);
+  //   markup += html;
+  // });
+  // return markup;
+}
