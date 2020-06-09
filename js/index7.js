@@ -255,107 +255,116 @@
 //   }
 // } while (true);
 // ===============================================================================
-const grid = $qs('.notes-grid');
-// const note = createNote({
-//   text: 'Содержание заметки 1232123',
-//   date: '07/06/2018',
-// });
+// const grid = $qs('.notes-grid');
+// // const note = createNote({
+// //   text: 'Содержание заметки 1232123',
+// //   date: '07/06/2018',
+// // });
 
-// grid.appendChild(note);
+// // grid.appendChild(note);
 
-const notesList = [
-  { text: 'Заметка номер 1', date: getTimeStamp() },
-  { text: 'Заметка номер 2', date: getTimeStamp() },
-  { text: 'Заметка номер 3', date: getTimeStamp() },
-  { text: 'Заметка номер 4', date: getTimeStamp() },
-  { text: 'Заметка номер 5', date: getTimeStamp() },
-];
+// const notesList = [
+//   { text: 'Заметка номер 1', date: getTimeStamp() },
+//   { text: 'Заметка номер 2', date: getTimeStamp() },
+//   { text: 'Заметка номер 3', date: getTimeStamp() },
+//   { text: 'Заметка номер 4', date: getTimeStamp() },
+//   { text: 'Заметка номер 5', date: getTimeStamp() },
+// ];
 
-// const elements = createGridItem(notesList);
-// grid.append(...elements);
+// // const elements = createGridItem(notesList);
+// // grid.append(...elements);
 
-const markup = createGridItemsMarkup(notesList);
-grid.innerHTML = markup;
+// const markup = createGridItemsMarkup(notesList);
+// grid.innerHTML = markup;
 
-/*  ========   Helpers ======= */
+// const onSuccess = position => {
+//   const { latitude, longitude } = position.coords;
 
-function createNote({ text = 'Содержание заметки', date = '07/06/2018' }) {
-  const note = $cel('div', { className: 'note' });
+//   console.log(`Широта ${latitude}, Долгота: ${longitude}`);
+// };
+// const onError = error =>
+//   console.log('Ошибка при определении положения:', error);
+// navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
-  // const note = document.createElement('div');
-  // note.classList.add('note');
+// /*  ========   Helpers ======= */
 
-  const noteContent = $cel('div', { className: 'note__content' });
+// function createNote({ text = 'Содержание заметки', date = '07/06/2018' }) {
+//   const note = $cel('div', { className: 'note' });
 
-  // const noteContent = document.createElement('div');
-  // noteContent.classList.add('note__content');
+//   // const note = document.createElement('div');
+//   // note.classList.add('note');
 
-  const noteText = $cel('p', { className: 'note__text' }, text);
-  // const noteText = document.createElement('p');
-  // noteText.classList.add('note__text');
-  // noteText.textContent = text;
+//   const noteContent = $cel('div', { className: 'note__content' });
 
-  const noteDate = $cel(
-    'p',
-    { className: 'note__date', date },
-    `Создано ${date}`,
-  );
-  // const noteDate = document.createElement('p');
-  // noteDate.classList.add('note__date');
-  // noteDate.textContent = `Создано ${date}`;
+//   // const noteContent = document.createElement('div');
+//   // noteContent.classList.add('note__content');
 
-  const noteActions = $cel('div', { className: 'note__actions' });
+//   const noteText = $cel('p', { className: 'note__text' }, text);
+//   // const noteText = document.createElement('p');
+//   // noteText.classList.add('note__text');
+//   // noteText.textContent = text;
 
-  // const noteActions = document.createElement('div');
-  // noteActions.classList.add('note__actions');
-  const editBtn = $cel('button', { className: 'button' }, 'Изменить');
-  // const editBtn = document.createElement('button');
-  // editBtn.classList.add('button');
-  // editBtn.textContent = 'Изменить';
+//   const noteDate = $cel(
+//     'p',
+//     { className: 'note__date', date },
+//     `Создано ${date}`,
+//   );
+//   // const noteDate = document.createElement('p');
+//   // noteDate.classList.add('note__date');
+//   // noteDate.textContent = `Создано ${date}`;
 
-  const delBtn = $cel('button', { className: 'button' }, 'Удалить');
-  // const delBtn = document.createElement('button');
-  // delBtn.classList.add('button');
-  // delBtn.textContent = 'Удалить';
+//   const noteActions = $cel('div', { className: 'note__actions' });
 
-  noteContent.append(noteText, noteDate);
-  noteActions.append(editBtn, delBtn);
-  note.append(noteContent, noteActions);
+//   // const noteActions = document.createElement('div');
+//   // noteActions.classList.add('note__actions');
+//   const editBtn = $cel('button', { className: 'button' }, 'Изменить');
+//   // const editBtn = document.createElement('button');
+//   // editBtn.classList.add('button');
+//   // editBtn.textContent = 'Изменить';
 
-  return note;
-}
-function createGridItem(arr) {
-  return arr.reduce((acc, el) => acc.concat(createNote(el)), []);
+//   const delBtn = $cel('button', { className: 'button' }, 'Удалить');
+//   // const delBtn = document.createElement('button');
+//   // delBtn.classList.add('button');
+//   // delBtn.textContent = 'Удалить';
 
-  // const elements = [];
-  // arr.forEach(note => {
-  //   const el = createNote(note);
-  //   elements.push(el);
-  // }
-  // return elements;
-}
-function createNoteMarkup({ text, date }) {
-  return `
- <div class="note">
-      <div class="note__content">
-        <p class="note__text">${text}</p>
-        <p class="note__date">Создано ${date}</p>
-      </div>
-      <div class="note__actions">
-        <button class="button">Изменить</button>
-        <button class="button">Удалить</button>
-      </div>
-    </div>
-  `;
-}
-function createGridItemsMarkup(arr) {
-  return arr.reduce((acc, obj) => acc + createNoteMarkup(obj), '');
+//   noteContent.append(noteText, noteDate);
+//   noteActions.append(editBtn, delBtn);
+//   note.append(noteContent, noteActions);
 
-  // let markup = '';
+//   return note;
+// }
+// function createGridItem(arr) {
+//   return arr.reduce((acc, el) => acc.concat(createNote(el)), []);
 
-  // arr.forEach(note => {
-  //   const html = createNoteMarkup(note);
-  //   markup += html;
-  // });
-  // return markup;
-}
+//   // const elements = [];
+//   // arr.forEach(note => {
+//   //   const el = createNote(note);
+//   //   elements.push(el);
+//   // }
+//   // return elements;
+// }
+// function createNoteMarkup({ text, date }) {
+//   return `
+//  <div class="note">
+//       <div class="note__content">
+//         <p class="note__text">${text}</p>
+//         <p class="note__date">Создано ${date}</p>
+//       </div>
+//       <div class="note__actions">
+//         <button class="button">Изменить</button>
+//         <button class="button">Удалить</button>
+//       </div>
+//     </div>
+//   `;
+// }
+// function createGridItemsMarkup(arr) {
+//   return arr.reduce((acc, obj) => acc + createNoteMarkup(obj), '');
+
+//   // let markup = '';
+
+//   // arr.forEach(note => {
+//   //   const html = createNoteMarkup(note);
+//   //   markup += html;
+//   // });
+//   // return markup;
+// }
