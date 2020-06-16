@@ -57,7 +57,7 @@
 // });
 
 // btn.addEventListener('click', e => {
-//   // e.stopPropagation();
+//   e.stopPropagation();
 
 //   console.log('[In button]');
 //   console.log('event.type:  ', e.type);
@@ -372,44 +372,44 @@
 
 // ===========================================
 
-const sections = $qsa('.section');
-const navContainerHeight = $qs('.page-header').offsetHeight;
+// const sections = $qsa('.section');
+// const navContainerHeight = $qs('.page-header').offsetHeight;
 
-const verticalOffsets = collectVerticalOffsets(sections);
-setTopBodyPadding(navContainerHeight);
+// const verticalOffsets = collectVerticalOffsets(sections);
+// setTopBodyPadding(navContainerHeight);
 
-window.addEventListener(
-  'scroll',
-  handleWindowScroll.bind(null, verticalOffsets),
-);
+// window.addEventListener(
+//   'scroll',
+//   handleWindowScroll.bind(null, verticalOffsets),
+// );
 
-function setTopBodyPadding(val) {
-  document.body.style.paddingTop = val + 'px';
-}
+// function setTopBodyPadding(val) {
+//   document.body.style.paddingTop = val + 'px';
+// }
 
-function collectVerticalOffsets(elements) {
-  const obj = {};
+// function collectVerticalOffsets(elements) {
+//   const obj = {};
 
-  elements.forEach(el => {
-    obj[el.id] = el.offsetTop;
-  });
-  return obj;
-}
+//   elements.forEach(el => {
+//     obj[el.id] = el.offsetTop;
+//   });
+//   return obj;
+// }
 
-function handleWindowScroll(offsets) {
-  const scrollPos =
-    document.documentElement.scrollTop || document.body.scrollTop;
+// function handleWindowScroll(offsets) {
+//   const scrollPos =
+//     document.documentElement.scrollTop || document.body.scrollTop;
 
-  Object.keys(offsets).forEach(key => {
-    if (offsets[key] <= scrollPos) {
-      setActiveItem(key);
-    }
-  });
-}
-function setActiveItem(id) {
-  const prevActiveItem = $qs('.site-nav a.active');
-  prevActiveItem.classList.remove('active');
+//   Object.keys(offsets).forEach(key => {
+//     if (offsets[key] <= scrollPos) {
+//       setActiveItem(key);
+//     }
+//   });
+// }
+// function setActiveItem(id) {
+//   const prevActiveItem = $qs('.site-nav a.active');
+//   prevActiveItem.classList.remove('active');
 
-  const curActiveItem = $qs(`.site-nav a[href*='${id}']`);
-  curActiveItem.classList.add('active');
-}
+//   const curActiveItem = $qs(`.site-nav a[href*='${id}']`);
+//   curActiveItem.classList.add('active');
+// }
