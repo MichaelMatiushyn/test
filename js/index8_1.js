@@ -196,4 +196,62 @@
     - При наборе текста в инпуте (событие input), текущее его значение должно 
       отображаться в p.input-value 
 */
+// const message = $qs('.message');
+// const input = $qs('.input');
+// const input__value = $qs('.input-value');
 
+// input.addEventListener('focus', messageInFocus);
+// input.addEventListener('focusout', noMessage);
+
+// input.addEventListener('change', addText);
+
+// function messageInFocus() {
+//   message.textContent = 'Input is in focus';
+// }
+// function noMessage() {
+//   message.textContent = '';
+// }
+// function addText() {
+//   input__value.textContent += input.value;
+// }
+
+// =======================================================================================
+
+// 8.9
+/*
+  На вкладках HTML и CSS уже готовая верстка модального окна.
+  По умолчанию модальное окно скрыто классом modal-hidden.
+  
+  Напишите скрипт который реализует следующее поведение:
+ 
+  - При клике на кнопке с надписью "Open Modal", модальное окно с классом modal, 
+    должно появляться. Для этого необходимо убрать класс modal-hidden. 
+    Для выбора модального окна используйте класс js-modal-backdrop
+ 
+  - При открытом модальном окне, клик на кнопку с крестиком (data-action="close-modal")
+    или на серый фон с прозрачностью (js-modal-backdrop), модальное окно должно закрываться.
+*/
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const modal = $qs('.modal');
+//   const modalBackdrop = $qs('.js-modal-backdrop');
+//   const btnShow = $qs('.btn');
+//   btnShow.addEventListener('click', showModal);
+//   const btnCloseModal = $qs('.close-btn');
+//   btnCloseModal.addEventListener('click', hideModal);
+//   modalBackdrop.addEventListener('click', handleBackdropClick);
+
+//   function showModal() {
+//     if (modal.classList.contains('modal-hidden')) {
+//       modal.classList.remove('modal-hidden');
+//     }
+//   }
+
+//   function hideModal() {
+//     modal.classList.add('modal-hidden');
+//   }
+//   function handleBackdropClick(event) {
+//     if (this !== event.target) return;
+//     hideModal();
+//   }
+// });
