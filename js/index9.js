@@ -214,3 +214,65 @@
 // ===========================================================
 // модуль 9.2
 
+// const promise = new Promise((onResolve, onReject) => {
+//   setTimeout(() => {
+//     onResolve(5);
+//     onReject('promise rejected!');
+//   }, 500);
+// });
+
+// // promise.then(
+// //   value => console.log(value),
+// //   err => console.log(err),
+// // );
+// // console.log('after promise.then');
+// const resolved = value => {
+//   console.log(value);
+//   return value * 2;
+// };
+// const rejected = err => console.log(err);
+
+// promise
+//   .then(value => {
+//     console.log('first then', value);
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve(value * 5);
+//       }, 2000);
+//     });
+//   })
+//   .then(resolved)
+//   .then(resolved)
+//   .catch(error => console.log('error: ', error));
+// =================================================================
+// const checkNumber = num => {
+//   return new Promise((res, rej) => {
+//     setTimeout(() => {
+//       if (num % 2 === 0) {
+//         res('Even!!! Success!!!');
+//       }
+//       rej('Odd!!!!  Fail!!!!');
+//     }, 1000);
+//   });
+// };
+
+// const promise = checkNumber(5);
+// promise.then(result => console.log(result)).catch(error => console.log(error));
+
+// ===============================================================
+const DISTANCE = 1000;
+const race = (name, speed) =>
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(`${name} crossed finish line`);
+    }, (DISTANCE / speed) * 1000);
+  });
+console.log('aaa1');
+race('mango', 300).then(res => console.log(res));
+console.log('aaa2');
+race('poly', 500).then(res => console.log(res));
+console.log('aaa3');
+race('ajax', 700).then(res => console.log(res));
+console.log('aaa4');
+
+// продолжить 9.2 на 0.41
