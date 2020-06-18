@@ -260,19 +260,38 @@
 // promise.then(result => console.log(result)).catch(error => console.log(error));
 
 // ===============================================================
-const DISTANCE = 1000;
-const race = (name, speed) =>
-  new Promise(resolve => {
-    setTimeout(() => {
-      resolve(`${name} crossed finish line`);
-    }, (DISTANCE / speed) * 1000);
-  });
-console.log('aaa1');
-race('mango', 300).then(res => console.log(res));
-console.log('aaa2');
-race('poly', 500).then(res => console.log(res));
-console.log('aaa3');
-race('ajax', 700).then(res => console.log(res));
-console.log('aaa4');
+// const DISTANCE = 1000;
+// const race = (name, speed) =>
+//   new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve(`${name} crossed finish line`);
+//     }, (DISTANCE / speed) * 1000);
+//   });
+// console.log('aaa1');
+// race('mango', 300).then(res => console.log(res));
+// console.log('aaa2');
+// race('poly', 500).then(res => console.log(res));
+// console.log('aaa3');
+// race('ajax', 700).then(res => console.log(res));
+// console.log('aaa4');
+// const mango = race('mango', 900);
+// const poly = race('poly', 500);
+// const ajax = race('ajax', 700);
 
-// продолжить 9.2 на 0.41
+// Promise.all([ajax, mango, poly])
+//   .then(arr => console.log(arr))
+//   .catch(err => console.log(err));
+
+// Promise.race([ajax, mango, poly])
+//   .then(result => console.log(result))
+//   .catch(err => console.log(err));
+
+// ==========================================
+
+console.log('qweqwe');
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(err => console.log(err));
+
+console.log('after');
