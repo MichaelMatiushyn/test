@@ -288,10 +288,10 @@
 
 // ==========================================
 
-console.log('qweqwe');
-fetch('https://jsonplaceholder.typicode.com/users')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(err => console.log(err));
+  // console.log('qweqwe');
+  // fetch('https://jsonplaceholder.typicode.com/users')
+  //   .then(response => response.json())
+  //   .then(data => console.log(data))
+  //   .catch(err => console.log(err));
 
-console.log('after');
+  // console.log('after');
