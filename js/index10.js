@@ -207,9 +207,108 @@
 
 // ==================================
 
-fetch(
-  'http://api.weatherstack.com/current?access_key=88d6561994d070d739cbacafb8dc39fd&query=Tcherkasy, Украина',
-)
-  .then(response => response.json())
-  .then(data => console.log(data));
-  // Продовжити 0,52 часть 3
+// fetch(
+//   'http://api.weatherstack.com/forecast?access_key=88d6561994d070d739cbacafb8dc39fd&query=Киев&days=7&hourly = 1',
+// )
+//   .then(response => response.json())
+//   .then(data => console.log(data));
+// // Продовжити 0,52 часть 3
+
+// =======================================
+
+
+const grid = $qs('.grid');
+const form = $qs('.form');
+const input = $qs('.input');
+const API_KEY = '563492ad6f91700001000001fc4ae933327a48ea88ce517765a14c0e';
+const spinner = $qs('.spinner-overlay');
+
+const toggleSpinner = () => spinner.classList.toggle('visible');
+
+const fetchImages = (query, count) => {
+  const url = `https://api.pexels.com/v1/search?query=${query}&per_page=${count}`;
+  const headers = { Authorization: API_KEY };
+
+  return fetch(url, { headers })
+    .then(res => {
+      if (res.ok) return res.json();
+      throw new Error('error' + res.statusText);
+    })
+    .then(data => data.photos)
+    .catch(err => console.log(err));
+};
+
+const createGridItem = items =>
+  items.reduce(
+    (markup, item) =>
+      markup +
+      `<div class='grid-item'><img src=${item.src.large} alt=${item.photographer}></div>`,
+    '',
+  );
+
+const updateGrid = photos => {
+  const markup = createGridItem(photos);
+  grid.innerHTML = markup;
+};
+
+const handleFormSubmit = e => {
+  e.preventDefault();
+  toggleSpinner();
+  fetchImages(input.value, 12).then(photos => {
+    updateGrid(photos);
+    toggleSpinner();
+  });
+  e.target.reset();
+};
+
+form.addEventListener('submit', handleFormSubmit);
+
+// ==============================================================
+// const getUserIP = () => {
+//   fetch('https://api.ipify.org?format=json')
+//     .then(response => {
+//       if (response.ok) return response.json();
+//       throw new Error('Error while fetching' + response.statusText);
+//     })
+//     .then(data => {
+//       console.log(data.ip);
+//       const onSuccess = position => {
+//         const { latitude, longitude } = position.coords;
+
+//         console.log(`Широта ${latitude}, Долгота: ${longitude}`);
+//       };
+//       const onError = error =>
+//         console.log('Ошибка при определении положения:', error);
+//       navigator.geolocation.getCurrentPosition(onSuccess, onError);
+//     })
+//     .catch(err => console.log(err));
+// };
+
+// const checkWeather = loc => {
+//   fetch(
+//     `http://api.weatherstack.com/current.json?access_key=88d6561994d070d739cbacafb8dc39fd & query = ${loc}`,
+//   )
+//     .then(response => response.json())
+//     .then(data => console.log(data));
+// };
+
+// const getUserIP = () => {
+//   fetch('https://api.ipify.org?format=json')
+//     .then(response => {
+//       if (response.ok) return response.json();
+//       throw new Error('Error while fetching' + response.statusText);
+//     })
+//     .then(data => {
+//       console.log(data.ip);
+//     })
+//     .catch(err => console.log(err));
+// };
+// getUserIP()
+//   .then(checkWeather)
+//   .then(data => console.log(data));
+
+// fetch(
+//   'http://api.weatherstack.com/current?access_key = 88d6561994d070d739cbacafb8dc39fd&query=Киев',
+// )
+//   .then(res => res.json())
+//   .then(data => console.log(data));
