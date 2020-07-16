@@ -66,7 +66,7 @@
 //   headers: {
 //     'Content-Type': 'application/json',
 //   },
-//   body: JSON.stringify(newPost),
+//   body: JSON .stringify(newPost),
 // };
 
 // const url = 'https://jsonplaceholder.typicode.com/posts';
@@ -216,52 +216,51 @@
 
 // =======================================
 
+// const grid = $qs('.grid');
+// const form = $qs('.form');
+// const input = $qs('.input');
+// const API_KEY = '563492ad6f91700001000001fc4ae933327a48ea88ce517765a14c0e';
+// const spinner = $qs('.spinner-overlay');
 
-const grid = $qs('.grid');
-const form = $qs('.form');
-const input = $qs('.input');
-const API_KEY = '563492ad6f91700001000001fc4ae933327a48ea88ce517765a14c0e';
-const spinner = $qs('.spinner-overlay');
+// const toggleSpinner = () => spinner.classList.toggle('visible');
 
-const toggleSpinner = () => spinner.classList.toggle('visible');
+// const fetchImages = (query, count) => {
+//   const url = `https://api.pexels.com/v1/search?query=${query}&per_page=${count}`;
+//   const headers = { Authorization: API_KEY };
 
-const fetchImages = (query, count) => {
-  const url = `https://api.pexels.com/v1/search?query=${query}&per_page=${count}`;
-  const headers = { Authorization: API_KEY };
+//   return fetch(url, { headers })
+//     .then(res => {
+//       if (res.ok) return res.json();
+//       throw new Error('error' + res.statusText);
+//     })
+//     .then(data => data.photos)
+//     .catch(err => console.log(err));
+// };
 
-  return fetch(url, { headers })
-    .then(res => {
-      if (res.ok) return res.json();
-      throw new Error('error' + res.statusText);
-    })
-    .then(data => data.photos)
-    .catch(err => console.log(err));
-};
+// const createGridItem = items =>
+//   items.reduce(
+//     (markup, item) =>
+//       markup +
+//       `<div class='grid-item'><img src=${item.src.large} alt=${item.photographer}></div>`,
+//     '',
+//   );
 
-const createGridItem = items =>
-  items.reduce(
-    (markup, item) =>
-      markup +
-      `<div class='grid-item'><img src=${item.src.large} alt=${item.photographer}></div>`,
-    '',
-  );
+// const updateGrid = photos => {
+//   const markup = createGridItem(photos);
+//   grid.innerHTML = markup;
+// };
 
-const updateGrid = photos => {
-  const markup = createGridItem(photos);
-  grid.innerHTML = markup;
-};
+// const handleFormSubmit = e => {
+//   e.preventDefault();
+//   toggleSpinner();
+//   fetchImages(input.value, 12).then(photos => {
+//     updateGrid(photos);
+//     toggleSpinner();
+//   });
+//   e.target.reset();
+// };
 
-const handleFormSubmit = e => {
-  e.preventDefault();
-  toggleSpinner();
-  fetchImages(input.value, 12).then(photos => {
-    updateGrid(photos);
-    toggleSpinner();
-  });
-  e.target.reset();
-};
-
-form.addEventListener('submit', handleFormSubmit);
+// form.addEventListener('submit', handleFormSubmit);
 
 // ==============================================================
 // const getUserIP = () => {
@@ -284,25 +283,37 @@ form.addEventListener('submit', handleFormSubmit);
 //     .catch(err => console.log(err));
 // };
 
-// const checkWeather = loc => {
+// const getWeather = () => {
 //   fetch(
-//     `http://api.weatherstack.com/current.json?access_key=88d6561994d070d739cbacafb8dc39fd & query = ${loc}`,
+//     'https://api.ipify.org?format=json&apiKey=at_UATjeAAFUvMF7ryJs93bEBDRNhcRU',
 //   )
-//     .then(response => response.json())
-//     .then(data => console.log(data));
-// };
-
-// const getUserIP = () => {
-//   fetch('https://api.ipify.org?format=json')
 //     .then(response => {
 //       if (response.ok) return response.json();
 //       throw new Error('Error while fetching' + response.statusText);
 //     })
 //     .then(data => {
 //       console.log(data.ip);
+
+//       const checkWeather = loc => {
+//         fetch(
+//           `http://api.weatherstack.com/current?access_key=6bc5f9b6661366dbe2f32ff97ab746e4&query=${loc}`,
+//         )
+//           .then(response => response.json())
+//           .then(data => {
+//             console.log(data);
+//             console.log(data.current.temperature);
+//             console.log(data.location.name);
+//           });
+//       };
+//       checkWeather(data.ip);
 //     })
 //     .catch(err => console.log(err));
 // };
+
+// getWeather();
+
+// ==================================================
+
 // getUserIP()
 //   .then(checkWeather)
 //   .then(data => console.log(data));
@@ -312,3 +323,52 @@ form.addEventListener('submit', handleFormSubmit);
 // )
 //   .then(res => res.json())
 //   .then(data => console.log(data));
+
+// повторение
+// localStorage.setItem('my-app', 'persisted stuff');
+// const fromLS = localStorage.getItem('my-app');
+// console.log(fromLS);
+// // не сохранит объект, нужно превратить его  в строку
+// const userSettings = {
+//   theme: 'light',
+//   fontSize: 24,
+// };
+
+// localStorage.setItem('my-app', JSON.stringify(userSettings));
+// const fromLS1 = JSON.parse(localStorage.getItem('my-app'));
+// console.log(fromLS1);
+
+// localStorage.setItem('my-app', 'check this file');
+// console.log(localStorage.getItem('my-app'));
+
+const form = $qs('.form');
+const input = $qs('.input');
+const sale = $qs('.sale');
+const buy = $qs('.buy');
+
+const handleFormSubmit = e => {
+  e.preventDefault();
+  const req = input.value.toUpperCase();
+  const getValue = () => {
+    try {
+      fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
+        .then(res => res.json())
+        .then(data =>
+          data.map(item => {
+            if (item.ccy === req) {
+              buy.textContent = Number.parseFloat(item.buy).toFixed(2);
+              sale.textContent = Number.parseFloat(item.sale).toFixed(2);
+            }
+          }),
+        );
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  getValue();
+
+  console.log(req);
+  e.target.reset();
+};
+
+form.addEventListener('submit', handleFormSubmit);

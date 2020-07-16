@@ -869,7 +869,7 @@ body {
 .active {
   background-color: #2196f3;
 } */
-body {
+/* body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
@@ -913,7 +913,7 @@ img {
 }
 
 .spinner > div {
-  background-color:palevioletred;
+  background-color: palevioletred;
   height: 100%;
   width: 6px;
   display: inline-block;
@@ -964,4 +964,29 @@ img {
     transform: scaleY(1);
     -webkit-transform: scaleY(1);
   }
+} */
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.overlay {
+  margin: 10px;
+  border: 1px solid black;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: inherit;
+}
+.sale {
+  width: 50%;
+  margin: 10px;
+  height: 60px;
+  border: 1px solid black;
+}
+.buy {
+  width: 50%;
+  margin: 10px;
+  height: 60px;
+  border: 1px solid black;
 }
