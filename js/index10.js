@@ -341,34 +341,269 @@
 // localStorage.setItem('my-app', 'check this file');
 // console.log(localStorage.getItem('my-app'));
 
-const form = $qs('.form');
-const input = $qs('.input');
-const sale = $qs('.sale');
-const buy = $qs('.buy');
+// const form = $qs('.form');
+// const input = $qs('.input');
+// const sale = $qs('.sale');
+// const buy = $qs('.buy');
 
-const handleFormSubmit = e => {
-  e.preventDefault();
-  const req = input.value.toUpperCase();
-  const getValue = () => {
-    try {
-      fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
-        .then(res => res.json())
-        .then(data =>
-          data.map(item => {
-            if (item.ccy === req) {
-              buy.textContent = Number.parseFloat(item.buy).toFixed(2);
-              sale.textContent = Number.parseFloat(item.sale).toFixed(2);
-            }
-          }),
-        );
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  getValue();
+// const handleFormSubmit = e => {
+//   e.preventDefault();
+//   const req = input.value.toUpperCase();
+//   const getValue = () => {
+//     try {
+//       fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
+//         .then(res => res.json())
+//         .then(data =>
+//           data.map(item => {
+//             if (item.ccy === req) {
+//               buy.textContent = Number.parseFloat(item.buy).toFixed(2);
+//               sale.textContent = Number.parseFloat(item.sale).toFixed(2);
+//             }
+//           }),
+//         );
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   };
+//   getValue();
 
-  console.log(req);
-  e.target.reset();
-};
+//   console.log(req);
+//   e.target.reset();
+// };
 
-form.addEventListener('submit', handleFormSubmit);
+// form.addEventListener('submit', handleFormSubmit);
+
+// Модуль 10 доп задания
+
+/*
+
+10.1
+  Написать функцию fetchCountryData, которая использует
+  API_URL + текущее значение input для составления запроса.
+  
+  Формат полного url таков:
+    https://restcountries.eu/rest/v2/name/имя-страны
+    
+  С помощью fetch сделать запрос по составленому адресу. 
+  Обязательно обработать вариант с ошибкой запроса используя catch. 
+  
+  
+  Все необходимые данные есть в ответе от API.
+  
+  PS: при отправке формы перезагружается страница,
+  решите эту задачу вспомнив о том, как остановить
+  поведение по умолчанию.
+*/
+
+// const input = document.querySelector('input');
+// const form = document.querySelector('.search-form');
+// const result = document.querySelector('.result');
+// const API_URL = 'https://restcountries.eu/rest/v2/name/';
+
+// form.addEventListener('submit', fetchCountryData);
+
+// /*
+//   @param {FormEvent} evt
+// */
+// function fetchCountryData(evt) {
+//   evt.preventDefault();
+//   try {
+//     fetch(`${API_URL}${input.value}`)
+//       .then(res => res.json())
+//       .then(data => {
+//         const country = data[0];
+
+//         result.innerHTML = `
+// <div> Counrty name : ${country.name} </div>
+// <div> Counrty capital : ${country.capital} </div>
+// <div> Main currency: ${country.currencies[0].name} </div>
+// <div class="flag"><img src="${country.flag}" alt='national flag'></div>
+// `;
+//         console.log(country);
+//       });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// =======================================================
+
+// 10.2
+
+/*
+  Написать функцию fetchUserData, которая использует
+  API_URL + текущее значение input для составления запроса.
+  
+  Формат полного url таков:
+    https://api.github.com/users/имя-пользователя
+    
+  Документация по Git API:
+    https://developer.github.com/v3/
+    
+  С помощью fetch сделать запрос по составленому адресу. 
+  Обязательно обработать вариант с ошибкой запроса используя catch. 
+  
+  Результат запроса вывести в поле result в формате:
+    Avatar: аватартка 
+    Username: логин
+    Bio: описание профиля
+    Public repos: кол-во открытых репозиториев
+  
+  Все необходимые данные есть в ответе от API.
+*/
+
+// const input = document.querySelector("input");
+// const form = document.querySelector(".search-form");
+// const result = document.querySelector(".result");
+// const API_URL = "";
+
+// form.addEventListener("submit", fetchUserData);
+
+// /*
+//   @param {FormEvent} evt
+// */
+// function fetchUserData(evt) {}
+
+// fetch('https://api.github.com/users/')
+//   .then(res => res.json())
+//   .then(data => console.log(data));
+
+// на потом
+
+// 10.3
+
+/*
+  Документация API: https://jsonplaceholder.typicode.com/
+
+  Просмотр всех пользователей: https://jsonplaceholder.typicode.com/users/ 
+
+  Написать функцию fetchUsers, которая посылает get запрос.
+  Результатом fetch будет массив объектов.
+  
+  В таблицу .user-table добавить строки для каждого пользователя.
+  Каждая строка состоит из 5-ти столбцов указанного формата.
+  Кол-во строк будет такое как и кол-во объектов пользователей в ответе.
+  
+    Имя | Почта | Город | Вебсайт | Компания
+    Имя | Почта | Город | Вебсайт | Компания
+    и так далее для каждого пользователя...
+*/
+
+// const form = document.querySelector('.search-form');
+// const userTable = document.querySelector('.user-table');
+
+// form.addEventListener('submit', fetchUsers);
+
+// // @param {FormEvent} evt
+
+// function createTableHead() {
+//   console.log(userTable);
+//   userTable.innerHTML = `
+
+//   <tr>
+//   <th>Имя</th>
+//   <th>Почта</th>
+//   <th>Город</th>
+//   <th>Вебсайт</th>
+//   <th>Компания</th>
+
+//   </tr>
+
+//   `;
+// }
+// function createUserInfo(user) {
+//   const tableLine = `
+//   <tr>
+//   <td>${user.name}</td>
+//   <td>${user.email}</td>
+//   <td>${user.address.city}</td>
+//   <td>${user.website}</td>
+//   <td>${user.company.name}</td>
+
+//   <tr>
+
+//   `;
+//   return tableLine;
+// }
+// function fetchUsers(evt) {
+//   evt.preventDefault();
+//   try {
+//     createTableHead();
+//     fetch('https://jsonplaceholder.typicode.com/users/')
+//       .then(res => res.json())
+//       .then(data =>
+//         data.map(user => {
+//           console.log(user);
+//           userTable.innerHTML += createUserInfo(user);
+//         }),
+//       );
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
+// 10.4
+
+/*
+  Документация API: https://jsonplaceholder.typicode.com/users/
+
+  Написать функцию getUserById, которая посылает запрос 
+  на получение информации о пользоватеьте с id (число) введенным в input. 
+  Не забывайте что значение input это строка.
+ 
+  Объект что придет в ответе используйте для вывода информации
+  о пользователе в элементе .result
+  
+  Если пользователя с таким идентификатором в базе данных нет,
+  в элемент .result вывести строку "Ошибка! Пользователя с таким id не существует"
+*/
+
+// const input = document.querySelector('input');
+// const form = document.querySelector('.search-form');
+// const result = document.querySelector('.result');
+
+// form.addEventListener('submit', getUserById);
+
+// function getUserById(evt) {
+//   evt.preventDefault();
+//   try {
+//     fetch('https://jsonplaceholder.typicode.com/users/')
+//       .then(res => res.json())
+//       .then(data => {
+//         if (!input.value) {
+//           input.value = '';
+//           input.placeholder = 'New search';
+//           result.innerHTML = '';
+//           return console.log('Ошибка! Не введено id');
+//         }
+
+//         const notNumber = Number.isNaN(Number(input.value));
+//         if (notNumber) {
+//           input.value = '';
+//           input.placeholder = 'New search';
+//           result.innerHTML = '';
+//           return console.log('Вы ввели не число!');
+//         }
+//         const asNumber = Number(input.value);
+
+//         data.map(user => {
+//           if (user.id === asNumber) {
+//             const loc = user.address;
+//             result.innerHTML = `
+//             <div>Name: ${user.name}</div>
+//             <div>User ID:  ${user.id}</div>
+//             <div>User Phone:  ${user.phone}</div>
+//             <div>User Nickname: ${user.username}</div>
+//             <div>User Adress: ${loc.suite}, ${loc.street},  ${loc.zipcode} ${loc.city}, </div>
+//             <div>User Website: ${user.website}</div>
+
+//             `;
+//           }
+//         });
+//         input.value = '';
+//         input.placeholder = 'New search';
+//       });
+//   } catch (error) {
+//     console.log(err);
+//   }
+// }
