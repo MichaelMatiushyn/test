@@ -1266,3 +1266,14 @@ td {
   border: 1px solid black;
   min-height: 100px;
 } */
+
+/* --------------------------------------------- */
+/*  Модуль 11 */
+#root {
+  width: 70%;
+  box-sizing: border-box;
+}
+#root img {
+  display: block;
+  width: 100%;
+}

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="/img/black.ico" type="image/x-icon" />
   </head>
   <body>
     <!-- <ul class="list">
@@ -714,41 +715,98 @@
   <div class="result"></div>
 </div> -->
 
-<!-- ============================================== -->
+    <!-- ============================================== -->
 
-<!-- 10.2 -->
+    <!-- 10.2 -->
 
-<!-- <div class="container">
+    <!-- <div class="container">
   <form class="search-form">
     <input type="text" name="country" placeholder="Enter user name">
     <button class="mdc-btn" type="submit">search</button>
   </form>
   <div class="result"></div>
 </div> -->
-<!-- на потом -->
+    <!-- на потом -->
 
-<!-- 10.3 -->
+    <!-- 10.3 -->
 
-<!-- <div class="container">
+    <!-- <div class="container">
   <form class="search-form">
     <button class="mdc-btn" type="submit">get</button>
   </form>
   <table class="user-table"></table>
 </div> -->
 
+    <!-- 10.4 -->
 
-<!-- 10.4 -->
-
-<!-- <div class="container">
+    <!-- <div class="container">
   <form class="search-form">
     <input type="text" name="country" placeholder="Enter user id">
     <button class="mdc-btn" type="submit">Get</button>
   </form>
   <div class="result"></div>
 </div> -->
+
+    <!-- Модуль 11
+     -->
+    <!-- <div id="root"></div>
+
+    <ul class="cats-list"></ul>
+
+    <!-- <template id="cats-list-tpl">
+      {{#each this}}
+      <li>
+        <h2>Name: {{name}}</h2>
+        <p>Age: {{age}}</p>
+        {{#if joyful}}
+        <p>Mood: 😋</p>
+        {{else}}
+        <p>Mood: 😞</p>
+        {{/if}}
+
+        <ul>
+          {{#each traits}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </li>
+      {{/each}}
+    </template> -->
+
+    <!-- <template id="cat-card">
+      <div class="cat">
+        <img src="{{img}}" alt="cute cat" />
+        <h2>Name: {{name}}</h2>
+        <p>Age: {{age}}</p>
+      </div>
+    </template> -->
+
+    <div class="grid"></div>
+    <template id="dish-card">
+      <div class="card">
+        <img src="{{image}}" width="200" alt="" class="img" />
+        <div class="content">
+          <h2 class="name">{{name}}</h2>
+          <p class="descr">
+            {{descr}}
+          </p>
+          <footer class="footer">
+            <p class="price">Price: {{price}}$</p>
+            {{#if available}}
+            <button class="button">Add to order</button>
+            {{/if}}
+          </footer>
+          {{#unless available}}
+          <p class="sold-out">Sold out!</p>
+          {{/unless}}
+        </div>
+      </div>
+    </template>
+
     <!-- Скрипты -->
 
     <script src="js/utils.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/index2.js"></script>
     <script src="js/index3.js"></script>
@@ -768,5 +826,6 @@
     <script src="js/index9.js"></script>
     <script src="js/index9_1.js"></script>
     <script src="js/index10.js"></script>
+    <script src="js/index11.js"></script>
   </body>
 </html>
