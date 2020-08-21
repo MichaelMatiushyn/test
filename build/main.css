@@ -1,4 +1,7 @@
 body {
-  background-color: blue;
+  background-color: pink;
+  display: flex;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  display: grid;
 }
 
